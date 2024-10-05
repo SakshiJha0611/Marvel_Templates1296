@@ -99,10 +99,6 @@ body {
    
     
 }
-#div1 img {
-    object-fit: fill; /* Ensures the image covers the entire container */
-    border-radius: 8px; /* Optional, gives rounded corners to the image */
-}
 
 #div2 {
     background-color: #E3A5C7;
