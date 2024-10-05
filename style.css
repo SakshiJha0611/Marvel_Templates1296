@@ -1,0 +1,278 @@
+/* General body styling */
+body {
+    background-color: #E5D9F2;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 0px;
+}
+
+/* Styling for login container */
+.login-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+#content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+
+/* Make the content responsive */
+@media only screen and (max-width: 600px) {
+    #content {
+        padding: 10px;
+        height: auto; /* Adjust for smaller screens */
+    }
+}
+
+/* Disable selection and copy-pasting */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Styling for the template container */
+#ContainerBox101 {
+    background-color: #FAF3F0;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap; /* Allows boxes to wrap in rows */
+    gap: 10px;
+}
+
+.box {
+    height: 200px; /* Example height */
+    flex: 1 1 200px; /* Responsive boxes */
+    margin-bottom: 20px;
+}
+
+#div1 {
+    background-color: #B692C2;
+    margin-top: 20px;
+    
+}
+
+#div2 {
+    background-color: #E3A5C7;
+}
+
+#div3 {
+    background-color: #BB9AB1;
+}
+
+#div4 {
+    background-color: #E2DAD6;
+}
+
+#div5 {
+    background-color: #FFB0B0;
+}
+
+#div6 {
+    background-color: #E7CCCC;
+}
+
+#div7 {
+    background-color: #EECAD5;
+}
+
+#div8 {
+    background-color: #CDC1FF;
+}
+#div9{
+    background-color: #B692C2;
+}
+#div10{
+    background-color: #E3A5C7;
+}
+#div11{
+    background-color: #BB9AB1;
+}
+#div12{
+    background-color: #E2DAD6;
+}
+#div13{
+    background-color: #FFB0B0;
+}
+#div14{
+    background-color: #E7CCCC;
+}
+#div15{
+    background-color: #EECAD5;
+}
+#div16{
+    background-color: #CDC1FF;
+}
+#div17{
+    background-color: #B692C2;
+}
+
+#div18{
+    background-color: #E3A5C7;
+}
+
+#div19{
+    background-color: #BB9AB1;
+}
+
+#div20{
+    background-color: #E2DAD6;
+}
+
+#div21{
+    background-color: #FFB0B0;
+}
+
+#div22{
+    background-color: #E7CCCC;
+}
+
+#div23{
+    background-color: #EECAD5;
+}
+
+#div24{
+    background-color: #CDC1FF;
+}
+#div25{
+    background-color: #B692C2;
+}
+#div26{
+    background-color: #E3A5C7;
+}
+#div27{
+    background-color: #BB9AB1;
+}
+#div28{
+    background-color: #E2DAD6;
+}
+#div29{
+    background-color: #FFB0B0;
+}
+#div30{
+    background-color: #E7CCCC;
+}
+#div31{
+    background-color: #EECAD5;
+}
+#div32{
+    background-color: #CDC1FF;
+}
+#div33{
+    background-color: #B692C2;
+}
+#div34{
+    background-color: #E3A5C7;
+}
+#div35{
+    background-color: #BB9AB1;
+}
+#div36{
+    background-color: #E2DAD6;
+}
+#div37{
+    background-color: #FFB0B0;
+}
+#div38{
+    background-color: #E7CCCC;
+}
+#div39{
+    background-color: #EECAD5;
+}
+#div40{
+    background-color: #CDC1FF;
+}
+#div41{
+    background-color: #B692C2;
+}
+
+#div42{
+    background-color: #E3A5C7;
+}
+
+#div43{
+    background-color: #BB9AB1;
+}
+
+#div44{
+    background-color: #E2DAD6;
+}
+
+#div45{
+    background-color: #FFB0B0;
+}
+#div46{
+    background-color: #B692C2;
+
+    
+}
+
+#div47{
+    background-color: #E3A5C7;
+}
+
+#div48{
+    background-color: #BB9AB1;
+}
+
+#div49{
+    background-color: #E2DAD6;
+}
+
+#div50{
+    background-color: #FFB0B0;
+}
+h1 {
+    text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 600px) {
+    #ContainerBox101 {
+        width: 100%;
+        padding: 10px;
+    }
+}
