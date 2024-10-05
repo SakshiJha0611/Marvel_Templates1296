@@ -102,6 +102,10 @@ body {
 #div2 {
     background-color: #E3A5C7;
 }
+#pic2{
+    justify-items: center;
+    margin-top: 20px;
+}
 
 #div3 {
     background-color: #BB9AB1;
