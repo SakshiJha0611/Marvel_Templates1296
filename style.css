@@ -81,6 +81,10 @@ body {
     display: flex;
     flex-wrap: wrap; /* Allows boxes to wrap in rows */
     gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .box {
@@ -92,13 +96,10 @@ body {
 #div1 {
     background-color: #B692C2;
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
     
 }
-.box img {
+#div1 img {
     object-fit: cover; /* Ensures the image covers the entire container */
     border-radius: 8px; /* Optional, gives rounded corners to the image */
 }
