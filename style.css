@@ -81,10 +81,7 @@ body {
     display: flex;
     flex-wrap: wrap; /* Allows boxes to wrap in rows */
     gap: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
 }
 
 .box {
