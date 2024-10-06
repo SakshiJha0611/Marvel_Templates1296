@@ -78,8 +78,8 @@ body {
 
 /* Style for div containers */
 #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9, #div10, #div11, #div12, #div13, #div14, #div15, #div16, #div17, #div18, #div19, #div20, #div21, #div22, #div23, #div24, #div25, #div26, #div27, #div28, #div29, #div30, #div31, #div32, #div33, #div34, #div35, #div36, #div37, #div38, #div39, #div40, #div41, #div42, #div43, #div44, #div45, #div46, #div47, #div48, #div49, #div50    {
-    width: 800px; /* Set the width as per requirement */
-    height: 700px; /* Set the height as per requirement */
+    width: 400px; /* Set the width as per requirement */
+    height: 400px; /* Set the height as per requirement */
     margin: 20px;
     border: 0px; /* Optional: Border for visibility */
     overflow: hidden; /* Ensures that image stays within container */
