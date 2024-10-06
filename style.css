@@ -85,7 +85,7 @@ body {
 }
 
 .box {
-    height: 580px; /* Example height */
+    height: 630px; /* Example height */
     flex: 1 1 200px; /* Responsive boxes */
     margin-bottom: 20px;
 }
