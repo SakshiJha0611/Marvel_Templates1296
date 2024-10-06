@@ -74,6 +74,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    background-image: linear-gradient(to bottom right, rgba(19, 18, 18, 0.938), rgb(102, 102, 98));
+    color: whitesmoke;
 }
 
 /* Style for div containers */
