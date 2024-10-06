@@ -84,6 +84,7 @@ body {
     background-image: url('bcgimg.jpg'); /* Replace with your image URL */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     opacity: 0.5; /* 50% opacity */
     z-index: -1; /* Ensure it stays behind all other content */
   }
