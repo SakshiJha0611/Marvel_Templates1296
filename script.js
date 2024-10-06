@@ -30,6 +30,10 @@ document.getElementById("loginButton").addEventListener("click", function () {
         }
     }
 });
+function togglePassword() {
+    const passwordInput = document.getElementById("passwordInput");
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+}
 
 // Function to display content and hide login
 function showContent() {
@@ -128,3 +132,10 @@ window.addEventListener("keyup", function (e) {
         alert("Screenshots are disabled on this page.");
     }
 });
+function disableShortcuts(event) {
+    if (event.key === 'PrintScreen' || event.key === 'F12' || 
+        (event.ctrlKey && event.shiftKey && event.key === 'I') || 
+        (event.ctrlKey && event.shiftKey && event.key === 'C')) {
+        event.preventDefault();
+    }
+}
