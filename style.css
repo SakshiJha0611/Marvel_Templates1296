@@ -13,9 +13,11 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
 }
+
+
 
 input[type="password"] {
     width: 100%;
@@ -118,6 +120,11 @@ body {
     flex: 1 1 200px; 
     margin-bottom: 20px;
 } */
+.box img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 
 #div1 {
     background-color: #B692C2;
