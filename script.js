@@ -30,10 +30,7 @@ document.getElementById("loginButton").addEventListener("click", function () {
         }
     }
 });
-function togglePassword() {
-    const passwordInput = document.getElementById("passwordInput");
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-}
+
 
 // Function to display content and hide login
 function showContent() {
