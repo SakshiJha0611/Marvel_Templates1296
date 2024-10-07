@@ -136,3 +136,37 @@ function disableShortcuts(event) {
         event.preventDefault();
     }
 }
+// Grab containerbox101 and the sections within it
+const container = document.getElementById('containerbox101');
+const box = document.querySelectorAll('.box');
+const popup = document.getElementById('popup');
+
+// Function to check which section is in view
+function handleScroll() {
+    let visibleSection = null;
+
+    box.forEach((box, index) => {
+        const boxRect = box.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+
+        // Check if box is visible inside containerbox101
+        if (
+            boxRect.top >= containerRect.top &&
+            boxRect.bottom <= containerRect.bottom
+        ) {
+            visibleSection = index + 1;  // Store the section number (1-based)
+        }
+    });
+
+    // If a section is visible, update the popup with the section number
+    if (visibleSection) {
+        popup.textContent = `Page ${visibleSection}`;
+        popup.classList.add('visible');
+        popup.classList.remove('hidden');
+    } else {
+        popup.classList.add('hidden');
+    }
+}
+
+// Add the scroll event listener to containerbox101
+container.addEventListener('scroll', handleScroll);
