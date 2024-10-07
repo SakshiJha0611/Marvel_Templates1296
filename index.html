@@ -87,36 +87,8 @@
     </div>
 
     <!-- Popup for showing the page number -->
-    <!-- <div id="popup" class="hidden">Page 1</div> -->
-    <div class="popup" id="popup">Page Number: 1</div>
-
-  <script>
-    let currentPage = 1; // Start at page 1
-    const totalPages = 50; // Total number of pages
-    const popup = document.getElementById('popup');
-
-    // Function to update the popup
-    function updatePopup(pageNumber) {
-      popup.textContent = `Page Number: ${pageNumber}`;
-      popup.style.display = 'block'; // Show the popup
-      setTimeout(() => {
-        popup.style.display = 'none'; // Hide the popup after 2 seconds
-      }, 2000);
-    }
-     // Scroll event listener
-     window.addEventListener('scroll', () => {
-      // Calculate the current page based on scroll position
-      const scrollTop = window.scrollY; // Current vertical scroll position
-      const pageHeight = window.innerHeight; // Height of the viewport
-      const newPage = Math.floor(scrollTop / pageHeight) + 1;
-
-      // Update the current page if it has changed
-      if (newPage !== currentPage && newPage <= totalPages) {
-        currentPage = newPage;
-        updatePopup(currentPage); // Update the popup with the new page number
-      }
-    });
-  </script>
+    <div id="popup" class="hidden">Page 1</div>
+    
 
     <script src="script.js"></script>
 </body>
