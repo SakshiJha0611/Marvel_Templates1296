@@ -121,8 +121,8 @@ button:hover {
 
 /* Individual box styling */
 .box {
-    width: calc(25% - 20px); /* Four boxes per row with gap */
-    height: 200px; /* Adjust height as needed */
+    width:calc(100% / 3 - 20px); /*calc(25% - 20px); Four boxes per row with gap */
+    height:50vh; /* 200px;  Adjust height as needed */
     margin: 10px 0;
     overflow: hidden; /* Ensures content stays within box */
     display: flex;
@@ -173,6 +173,17 @@ button:hover {
 #popup.hidden {
     opacity: 0;
 }
+/* Popup fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animation when visible */
+#popup.visible {
+    animation: fadeIn 0.5s forwards;
+}
+
 
 /* Responsive adjustments for template boxes */
 @media only screen and (max-width: 1200px) {
@@ -198,5 +209,4 @@ h1 {
     text-align: center;
     margin-top: 40px;
     color: white; /* Ensure visibility against background */
-}
-
+};
