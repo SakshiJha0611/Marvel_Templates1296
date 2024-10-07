@@ -1,5 +1,5 @@
-// You can add any JavaScript functionality here if needed in the future.
 console.log("Welcome to The Template Samples Page!");
+
 // Initial passwords
 const firstPassword = "SmithJohn9021";
 const secondPassword = "JhaSakshi321";
@@ -7,6 +7,7 @@ const secondPassword = "JhaSakshi321";
 // Check if the user has already accessed the page before
 const hasAccessedBefore = localStorage.getItem("accessGranted") === "true";
 
+// Add event listener to the login button
 document.getElementById("loginButton").addEventListener("click", function () {
     const enteredPassword = document.getElementById("passwordInput").value;
 
@@ -31,11 +32,11 @@ document.getElementById("loginButton").addEventListener("click", function () {
     }
 });
 
-
 // Function to display content and hide login
 function showContent() {
     document.querySelector(".login-container").style.display = "none";
     document.getElementById("content").style.display = "block";
+    document.getElementById("ContainerBox101").style.display = "flex"; // Use flex for proper layout
 }
 
 // Function to show error messages
@@ -64,109 +65,78 @@ function startTimer() {
 
 // Disable right-click, screenshot shortcuts, and copying
 function disableShortcuts(event) {
-    const forbiddenKeys = ["PrintScreen", "F12", "Control+Shift+I", "Control+Shift+C"];
-    
-    if (forbiddenKeys.includes(event.key) || event.ctrlKey && (event.key === 'c' || event.key === 'u' || event.key === 's')) {
+    const forbiddenKeys = ["PrintScreen", "F12", "I", "C"];
+
+    // Check for forbidden key combinations
+    if (
+        (event.ctrlKey && event.shiftKey && forbiddenKeys.includes(event.key)) ||
+        forbiddenKeys.includes(event.key)
+    ) {
         event.preventDefault();
         alert("Screenshots and screen recording are disabled on this page.");
     }
 }
 
-// Optionally, block keyboard shortcuts to prevent easy screenshots
+// Block keyboard shortcuts to prevent easy screenshots
 window.addEventListener("keyup", function (e) {
-    if (e.key == "PrintScreen") {
+    if (e.key === "PrintScreen") {
         navigator.clipboard.writeText("");
         alert("Screenshots are disabled on this page.");
     }
 });
 
-
-// Function to display content and hide login
-function showContent() {
-    document.querySelector(".login-container").style.display = "none"; // Hide login
-    document.getElementById("content").style.display = "block"; // Show content
-    document.getElementById("ContainerBox101").style.display = "block"; // Show templates
-}
-
-// Function to show error messages
-function showError(message) {
-    const errorElement = document.getElementById("errorMessage");
-    errorElement.textContent = message;
-    errorElement.style.display = "block";
-}
-
-// Timer that reloads the page after 60 seconds
-function startTimer() {
-    let timeLeft = 60; // 60 seconds
-    const timerElement = document.getElementById("timer");
-
-    const countdown = setInterval(function () {
-        timeLeft -= 1;
-        timerElement.textContent = timeLeft;
-
-        // Reload page after time is up
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            location.reload(); // Refresh the page
-        }
-    }, 1000);
-}
-
-// Disable right-click, screenshot shortcuts, and copying
-function disableShortcuts(event) {
-    const forbiddenKeys = ["PrintScreen", "F12", "Control+Shift+I", "Control+Shift+C"];
-    
-    if (forbiddenKeys.includes(event.key) || event.ctrlKey && (event.key === 'c' || event.key === 'u' || event.key === 's')) {
-        event.preventDefault();
-        alert("Screenshots and screen recording are disabled on this page.");
-    }
-}
-
-// Optionally, block keyboard shortcuts to prevent easy screenshots
-window.addEventListener("keyup", function (e) {
-    if (e.key == "PrintScreen") {
-        navigator.clipboard.writeText("");
-        alert("Screenshots are disabled on this page.");
-    }
-});
-function disableShortcuts(event) {
-    if (event.key === 'PrintScreen' || event.key === 'F12' || 
-        (event.ctrlKey && event.shiftKey && event.key === 'I') || 
-        (event.ctrlKey && event.shiftKey && event.key === 'C')) {
-        event.preventDefault();
-    }
-}
-// Grab containerbox101 and the sections within it
-const container = document.getElementById('containerbox101');
-const box = document.querySelectorAll('.box');
+// Grab ContainerBox101 and the sections within it
+const container = document.getElementById('ContainerBox101');
+const boxes = document.querySelectorAll('.box');
 const popup = document.getElementById('popup');
 
-// Function to check which section is in view
-function handleScroll() {
-    let visibleSection = null;
+// Intersection Observer options
+const options = {
+    root: container, // Set the container as the root
+    rootMargin: '0px',
+    threshold: 0.5 // 50% visibility
+};
 
-    box.forEach((box, index) => {
+// Callback function for Intersection Observer
+const callback = (entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const index = Array.from(boxes).indexOf(entry.target) + 1;
+            popup.textContent = `Page ${index}`;
+            popup.classList.add('visible');
+            popup.classList.remove('hidden');
+        }
+    });
+};
+
+// Create Intersection Observer
+const observer = new IntersectionObserver(callback, options);
+
+// Observe each box
+boxes.forEach(box => {
+    observer.observe(box);
+});
+
+// Optional: Hide popup when no boxes are intersecting
+container.addEventListener('scroll', () => {
+    let anyIntersecting = false;
+    boxes.forEach(box => {
         const boxRect = box.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
 
-        // Check if box is visible inside containerbox101
+        const boxTop = boxRect.top - containerRect.top;
+        const boxBottom = boxRect.bottom - containerRect.top;
+        const containerHeight = container.clientHeight;
+
         if (
-            boxRect.top >= containerRect.top &&
-            boxRect.bottom <= containerRect.bottom
+            boxTop < containerHeight * 0.5 &&
+            boxBottom > containerHeight * 0.5
         ) {
-            visibleSection = index + 1;  // Store the section number (1-based)
+            anyIntersecting = true;
         }
     });
 
-    // If a section is visible, update the popup with the section number
-    if (visibleSection) {
-        popup.textContent = `Page ${visibleSection}`;
-        popup.classList.add('visible');
-        popup.classList.remove('hidden');
-    } else {
+    if (!anyIntersecting) {
         popup.classList.add('hidden');
     }
-}
-
-// Add the scroll event listener to containerbox101
-container.addEventListener('scroll', handleScroll);
+});
