@@ -1,8 +1,8 @@
 console.log("Welcome to The Template Samples Page!");
 
 // Initial passwords
-const firstPassword = "SmithJohn9021";
-const secondPassword = "JhaSakshi321";
+const firstPassword = "ADI654890";
+const secondPassword = "CDI654098";
 
 // Check if the user has already accessed the page before
 const hasAccessedBefore = localStorage.getItem("accessGranted") === "true";
@@ -46,9 +46,9 @@ function showError(message) {
     errorElement.style.display = "block";
 }
 
-// Timer that reloads the page after 60 seconds
+// Timer that reloads the page after 180 seconds
 function startTimer() {
-    let timeLeft = 60; // 60 seconds
+    let timeLeft = 180; // 180 seconds
     const timerElement = document.getElementById("timer");
 
     const countdown = setInterval(function () {
