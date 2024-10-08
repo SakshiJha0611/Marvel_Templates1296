@@ -24,7 +24,7 @@ body::before {
     background-position: center; */
     margin: 0;
     height: 100vh; /* Full viewport height */
-    background-image: url('backpicff1.jpg'); /* Replace with your image URL */
+    background-image: url('http://www.pixelstalk.net/wp-content/uploads/2016/08/Dark-Wallpaper-Desktop-Background.jpg'); /* Replace with your image URL */
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the image */
     background-attachment: fixed; /* Fix the background image */
@@ -45,7 +45,7 @@ body::after {
     /* background-image: url('https://tse1.mm.bing.net/th?id=OIP.pcqZ7XiOxNl-AxJQBSxJmQHaEK&pid=Api&P=0&h=180'); /* Use the same or different image */
     margin: 0px;
     height: 100vh; /* Full viewport height */
-    background-image: url('backpicff1.jpg'); /* Replace with your image URL */
+    background-image: url('http://www.pixelstalk.net/wp-content/uploads/2016/08/Dark-Wallpaper-Desktop-Background.jpg'); /* Replace with your image URL */
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the image */
     background-attachment: fixed; /* Fix the background image */
