@@ -1,8 +1,8 @@
 console.log("Welcome to The Template Samples Page!");
 
 // Initial passwords
-const firstPassword = "ADI654890";
-const secondPassword = "CDI654098";
+const firstPassword = "AD0654890";
+const secondPassword = "AD0654098";
 
 // Check if the user has already accessed the page before
 const hasAccessedBefore = localStorage.getItem("accessGranted") === "true";
